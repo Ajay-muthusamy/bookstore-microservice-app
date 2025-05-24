@@ -22,7 +22,7 @@ services:
     ports:
       - "8081:7080"
   recommender-service:
-    build: ./recommender-service
+    build: ./recommend-service
     ports:
       - "5000:5001"
   postgres:
