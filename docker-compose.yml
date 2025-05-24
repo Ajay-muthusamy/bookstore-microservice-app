@@ -14,13 +14,13 @@ services:
   cart-service:
     build : ./cart-service
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5000/BookstoreDB
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/BookstoreDB
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=1234
     depends_on:
       - postgres
     ports:
-      - "8081:7080"
+      - "8081:5432"
   recommender-service:
     build: ./recommend-service
     ports:
