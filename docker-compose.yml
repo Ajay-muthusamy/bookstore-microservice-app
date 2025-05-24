@@ -1,0 +1,47 @@
+version '3.8'
+
+services:
+  frontend:
+    build : ./frontend
+    ports:
+      - "5000:80"
+  login-service:
+    build : ./express-service
+    environment:
+      - MONGO_URI=mongodb+srv://ajaymdu18:IKwSD866fVuZ02S0@cluster0.uldulkx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    ports:
+      - "3001:3030"
+  cart-service:
+    build : ./cart-service
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5000/BookstoreDB
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+    depends_on:
+      - postgres
+    ports:
+      - "8081:7080"
+  recommender-service:
+    build: ./recommender-service
+    ports:
+      - "5000:5001"
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: BookstoreDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - login-service
+      - cart-service
+      - recommender-service
+  volumes:
+    pgdata:
+    
