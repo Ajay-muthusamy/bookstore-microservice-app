@@ -6,7 +6,7 @@ const Privacy = () => {
       <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">Privacy Policy</h1>
 
       <p className="mb-4">
-        <strong>Bookstore</strong> is committed to ensuring that your privacy is protected. Should we ask you to provide certain
+        <strong>Bookstore official</strong> is committed to ensuring that your privacy is protected. Should we ask you to provide certain
         information by which you can be identified when using this website, then you can be assured that it will only
         be used in accordance with this privacy statement. 99Bookstore may change this policy from time to time by
         updating this page.
