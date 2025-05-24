@@ -24,7 +24,7 @@ services:
   recommender-service:
     build: ./recommend-service
     ports:
-      - "5000:5001"
+      - "5001:5001"
   postgres:
     image: postgres:15
     environment:
