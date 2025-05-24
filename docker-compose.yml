@@ -42,6 +42,6 @@ services:
       - login-service
       - cart-service
       - recommender-service
-  volumes:
-    pgdata:
+volumes:
+  pgdata:
     
