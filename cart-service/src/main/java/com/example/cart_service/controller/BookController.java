@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cart")
-@CrossOrigin(origins = "http://52.203.139.24:7080")
+@CrossOrigin(origins = "http://52.203.139.24")
 public class BookController {
 
     @Autowired
