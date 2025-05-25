@@ -6,7 +6,7 @@ from model import get_recommendations
 app = Flask(__name__)
 CORS(app)
 
-client = MongoClient("mongodb+srv://ajaymdu18:IKwSD866fVuZ02S0@cluster0.uldulkx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = MongoClient("MONGO_URI")
 db = client["test"]
 books_col = db["books"]
 
