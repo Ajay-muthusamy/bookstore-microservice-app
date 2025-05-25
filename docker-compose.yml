@@ -20,7 +20,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "8081:7080" 
+      - "7080:7080" 
   recommender-service:
     build: ./recommend-service
     ports:
