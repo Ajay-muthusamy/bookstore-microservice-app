@@ -20,7 +20,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "5000:5432""
+      - "5432:5432""
   recommender-service:
     build: ./recommend-service
     ports:
